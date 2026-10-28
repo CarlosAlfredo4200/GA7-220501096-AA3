@@ -1,0 +1,642 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #eef4ff 0%, #f8fbff 100%);
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.page-shell {
+    min-height: 100vh;
+}
+
+
+/* ================================= */
+/* ENCABEZADO */
+/* ================================= */
+
+.topbar {
+    width: 100%;
+    padding: 12px 0;
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.topbar__brand {
+    width: min(1150px, calc(100% - 32px));
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Logo del colegio */
+.topbar__logo {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    border-radius: 14px;
+
+    padding: 5px;
+    overflow: hidden;
+}
+
+.topbar__logo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+.topbar__brand h2 {
+    margin: 0 0 3px;
+
+    font-size: 1.15rem;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    line-height: 1.2;
+}
+
+.topbar__brand p {
+    margin: 0;
+
+    color: #cbd5e1;
+
+    font-size: 0.88rem;
+    line-height: 1.3;
+}
+
+
+/* ================================= */
+/* CONTENEDOR PRINCIPAL */
+/* ================================= */
+
+.container {
+    width: min(1150px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+
+/* ================================= */
+/* HERO */
+/* ================================= */
+
+.hero-card {
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+
+    gap: 28px;
+
+    padding: 36px;
+    margin-bottom: 28px;
+
+    background: #ffffff;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.hero-card h1 {
+    margin: 8px 0 14px;
+
+    color: #0f172a;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.15;
+}
+
+.hero-card__text {
+    max-width: 700px;
+
+    margin-bottom: 24px;
+
+    color: #475569;
+}
+
+.hero-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-card__panel {
+    display: flex;
+}
+
+.info-box {
+    width: 100%;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: #ffffff;
+
+    border-radius: 18px;
+}
+
+.info-box h3 {
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    color: #e5eefc;
+}
+
+
+/* ================================= */
+/* TARJETAS */
+/* ================================= */
+
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.card,
+.form-card {
+    background: #ffffff;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.07);
+}
+
+.form-card {
+    width: 100%;
+    max-width: 720px;
+
+    margin: 0 auto;
+}
+
+.card h3 {
+    margin-bottom: 16px;
+}
+
+
+/* ================================= */
+/* LISTAS */
+/* ================================= */
+
+.feature-list {
+    display: grid;
+    gap: 10px;
+
+    list-style: none;
+}
+
+.feature-list li {
+    padding: 10px 14px;
+
+    background: #f8fbff;
+
+    border: 1px solid #dbeafe;
+    border-radius: 10px;
+}
+
+
+/* ================================= */
+/* TEXTOS */
+/* ================================= */
+
+.page-eyebrow {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 0.78rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+
+/* ================================= */
+/* BOTONES */
+/* ================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #2563eb;
+    color: #ffffff;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+            background 0.2s ease,
+            transform 0.15s ease;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #64748b;
+}
+
+.btn-secondary:hover {
+    background: #475569;
+}
+
+.btn-danger {
+    background: #dc2626;
+}
+
+.btn-danger:hover {
+    background: #b91c1c;
+}
+
+.btn-small {
+    min-height: 36px;
+
+    padding: 7px 12px;
+
+    font-size: 0.85rem;
+}
+
+
+/* ================================= */
+/* PÁGINA DE PRODUCTOS */
+/* ================================= */
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 24px;
+
+    margin-bottom: 24px;
+}
+
+.products-header h1 {
+    margin: 5px 0;
+
+    color: #0f172a;
+}
+
+.products-header p {
+    color: #64748b;
+}
+
+.products-toolbar {
+    margin-bottom: 18px;
+}
+
+.back-link {
+    color: #475569;
+
+    font-weight: 600;
+}
+
+.back-link:hover {
+    color: #2563eb;
+}
+
+
+/* ================================= */
+/* TABLA */
+/* ================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+}
+
+.products-table {
+    width: 100%;
+    min-width: 780px;
+
+    border-collapse: collapse;
+}
+
+.products-table thead {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.products-table th,
+.products-table td {
+    padding: 14px 16px;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    text-align: left;
+    vertical-align: middle;
+}
+
+.products-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.products-table tbody tr:hover {
+    background: #eff6ff;
+}
+
+.table-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    white-space: nowrap;
+}
+
+.table-actions form {
+    margin: 0;
+}
+
+.empty-state {
+    padding: 32px !important;
+
+    text-align: center !important;
+
+    color: #64748b;
+}
+
+
+/* ================================= */
+/* FORMULARIOS */
+/* ================================= */
+
+.form-description {
+    margin: 6px 0 28px;
+
+    color: #64748b;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #334155;
+
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+
+    padding: 13px 14px;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #1f2937;
+
+    font-family: inherit;
+    font-size: 15px;
+
+    outline: none;
+
+    transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 26px;
+}
+
+
+/* ================================= */
+/* VALIDACIONES */
+/* ================================= */
+
+.validation-error {
+    display: block;
+
+    margin-top: 6px;
+
+    color: #dc2626;
+
+    font-size: 0.84rem;
+    font-weight: 600;
+}
+
+
+/* ================================= */
+/* RESPONSIVE TABLET */
+/* ================================= */
+
+@media (max-width: 900px) {
+
+    .hero-card {
+        grid-template-columns: 1fr;
+    }
+
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ================================= */
+/* RESPONSIVE MÓVIL */
+/* ================================= */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        padding: 10px 0;
+    }
+
+    .topbar__brand {
+        width: calc(100% - 24px);
+
+        gap: 12px;
+    }
+
+    .topbar__logo {
+        width: 56px;
+        height: 56px;
+
+        flex-basis: 56px;
+
+        border-radius: 10px;
+    }
+
+    .topbar__brand h2 {
+        font-size: 1rem;
+    }
+
+    .topbar__brand p {
+        font-size: 0.78rem;
+    }
+
+    .container {
+        width: calc(100% - 24px);
+
+        margin: 24px auto;
+    }
+
+    .hero-card {
+        grid-template-columns: 1fr;
+
+        padding: 24px 20px;
+    }
+
+    .hero-card__actions {
+        flex-direction: column;
+    }
+
+    .hero-card__actions .btn {
+        width: 100%;
+    }
+
+    .products-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .products-header .btn {
+        width: 100%;
+    }
+
+    .form-card {
+        padding: 24px 20px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+    }
+
+    .table-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .table-actions .btn,
+    .table-actions button {
+        width: 100%;
+    }
+}
+
+
+/* ================================= */
+/* RESPONSIVE CELULARES PEQUEÑOS */
+/* ================================= */
+
+@media (max-width: 480px) {
+
+    .topbar__logo {
+        width: 50px;
+        height: 50px;
+
+        flex-basis: 50px;
+    }
+
+    .topbar__brand h2 {
+        font-size: 0.95rem;
+    }
+
+    .topbar__brand p {
+        font-size: 0.75rem;
+    }
+
+    .hero-card {
+        padding: 20px 16px;
+    }
+
+    .card,
+    .form-card {
+        padding: 20px 16px;
+    }
+
+    .form-group input {
+        font-size: 16px;
+    }
+}

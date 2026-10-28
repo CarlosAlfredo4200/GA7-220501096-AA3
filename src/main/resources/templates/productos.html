@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Productos - Papelería SENA</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/styles.css}">
+
+</head>
+
+<body>
+
+<div class="page-shell">
+
+    <header class="topbar">
+
+        <div class="topbar__brand">
+
+            <span class="topbar__badge">
+                SENA
+            </span>
+
+            <div>
+                <h2>Sistema de Papelería</h2>
+                <p>Administración de productos</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="card">
+
+            <div class="products-header">
+
+                <div>
+
+                    <span class="page-eyebrow">
+                        Inventario
+                    </span>
+
+                    <h1>Listado de productos</h1>
+
+                    <p>
+                        Consulta y administra los productos
+                        registrados en el sistema.
+                    </p>
+
+                </div>
+
+
+                <a class="btn"
+                   th:href="@{/productos/nuevo}">
+                    + Registrar producto
+                </a>
+
+            </div>
+
+
+            <div class="products-toolbar">
+
+                <a class="back-link"
+                   th:href="@{/}">
+                    ← Volver al inicio
+                </a>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table class="products-table">
+
+                    <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Precio</th>
+                        <th>Acciones</th>
+                    </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                    <tr th:each="producto : ${productos}">
+
+                        <td th:text="${producto.id}"></td>
+
+                        <td th:text="${producto.nombre}"></td>
+
+                        <td th:text="${producto.descripcion}"></td>
+
+                        <td th:text="${producto.cantidad}"></td>
+
+                        <td th:text="'$' + ${producto.precio}"></td>
+
+
+                        <td class="table-actions">
+
+                            <a class="btn btn-secondary btn-small"
+                               th:href="@{/productos/editar/{id}(id=${producto.id})}">
+                                Editar
+                            </a>
+
+
+                            <form th:action="@{/productos/eliminar/{id}(id=${producto.id})}"
+                                  method="post">
+
+                                <button type="submit"
+                                        class="btn btn-danger btn-small"
+                                        onclick="return confirm('¿Desea eliminar este producto?');">
+                                    Eliminar
+                                </button>
+
+                            </form>
+
+                        </td>
+
+                    </tr>
+
+
+                    <tr th:if="${#lists.isEmpty(productos)}">
+
+                        <td colspan="6"
+                            class="empty-state">
+
+                            No hay productos registrados.
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

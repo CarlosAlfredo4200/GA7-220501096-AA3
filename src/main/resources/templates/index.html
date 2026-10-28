@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Papelería SENA</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/styles.css}">
+</head>
+
+<body>
+
+<div class="page-shell">
+
+    <header class="topbar">
+
+        <div class="topbar__brand">
+
+            <div class="topbar__logo">
+                <img th:src="@{/images/logo2025.png}"
+                     alt="Logo Colegio Panamericano Colombo Sueco">
+            </div>
+
+            <div>
+                <h2>Sistema de Gestion de Papelería CPCS</h2>
+
+                <p>
+                    Proyecto desarrollado con Spring Framework
+                </p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <section class="hero-card">
+
+            <div class="hero-card__content">
+
+                <span class="page-eyebrow">
+                    GA7 - AA3
+                </span>
+
+                <h1>
+                    Gestion de Papelería CPCS
+                </h1>
+
+                <p class="hero-card__text">
+                    Aplicación web desarrollada con Spring Boot,
+                    Spring MVC, Hibernate, JPA, Thymeleaf y SQL Server
+                    para la gestión de productos de papelería.
+                </p>
+
+                <div class="hero-card__actions">
+
+                    <a class="btn"
+                       th:href="@{/productos}">
+                        Ver productos
+                    </a>
+
+                    <a class="btn btn-secondary"
+                       th:href="@{/productos/nuevo}">
+                        Registrar producto
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-card__panel">
+
+                <div class="info-box">
+
+                    <h3>Framework aplicado</h3>
+
+                    <p>
+                        El proyecto utiliza Spring para implementar
+                        una arquitectura por capas y Hibernate/JPA
+                        para gestionar la persistencia de datos.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section-grid">
+
+            <article class="card">
+
+                <h3>Tecnologías</h3>
+
+                <ul class="feature-list">
+                    <li>Java 21</li>
+                    <li>Spring Boot</li>
+                    <li>Spring MVC</li>
+                    <li>Spring Data JPA</li>
+                    <li>Hibernate</li>
+                    <li>Thymeleaf</li>
+                    <li>SQL Server</li>
+                    <li>Maven</li>
+                </ul>
+
+            </article>
+
+
+            <article class="card">
+
+                <h3>Funcionalidades</h3>
+
+                <ul class="feature-list">
+                    <li>Registrar productos</li>
+                    <li>Consultar inventario</li>
+                    <li>Actualizar productos</li>
+                    <li>Eliminar productos</li>
+                    <li>Validar formularios</li>
+                    <li>Persistir información</li>
+                </ul>
+
+            </article>
+
+        </section>
+
+    </main>
+
+</div>
+
+</body>
+</html>

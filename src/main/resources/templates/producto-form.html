@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Registrar producto</title>
+
+    <link rel="stylesheet"
+          th:href="@{/css/styles.css}">
+
+</head>
+
+<body>
+
+<div class="page-shell">
+
+    <header class="topbar">
+
+        <div class="topbar__brand">
+
+            <span class="topbar__badge">
+                SENA
+            </span>
+
+            <div>
+                <h2>Sistema de Papelería</h2>
+                <p>Registro de productos</p>
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="form-card">
+
+            <span class="page-eyebrow">
+                Inventario
+            </span>
+
+            <h1>Registrar producto</h1>
+
+            <p class="form-description">
+                Ingresa los datos del producto que deseas
+                agregar al inventario.
+            </p>
+
+
+            <form th:action="@{/productos/guardar}"
+                  th:object="${producto}"
+                  method="post">
+
+
+                <div class="form-group">
+
+                    <label for="nombre">
+                        Nombre
+                    </label>
+
+                    <input type="text"
+                           id="nombre"
+                           th:field="*{nombre}"
+                           placeholder="Ej. Marcador negro">
+
+                    <span class="validation-error"
+                          th:if="${#fields.hasErrors('nombre')}"
+                          th:errors="*{nombre}">
+                    </span>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="descripcion">
+                        Descripción
+                    </label>
+
+                    <input type="text"
+                           id="descripcion"
+                           th:field="*{descripcion}"
+                           placeholder="Descripción del producto">
+
+                    <span class="validation-error"
+                          th:if="${#fields.hasErrors('descripcion')}"
+                          th:errors="*{descripcion}">
+                    </span>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="cantidad">
+                            Cantidad
+                        </label>
+
+                        <input type="number"
+                               id="cantidad"
+                               th:field="*{cantidad}"
+                               placeholder="0">
+
+                        <span class="validation-error"
+                              th:if="${#fields.hasErrors('cantidad')}"
+                              th:errors="*{cantidad}">
+                        </span>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="precio">
+                            Precio
+                        </label>
+
+                        <input type="number"
+                               id="precio"
+                               th:field="*{precio}"
+                               step="0.01"
+                               placeholder="0.00">
+
+                        <span class="validation-error"
+                              th:if="${#fields.hasErrors('precio')}"
+                              th:errors="*{precio}">
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button type="submit"
+                            class="btn">
+                        Registrar producto
+                    </button>
+
+                    <a class="btn btn-secondary"
+                       th:href="@{/productos}">
+                        Cancelar
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>
